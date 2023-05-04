@@ -134,6 +134,18 @@ ros2_cpp_library(
     ],
 )
 
+py_library(
+    name = "py_tf2_sensor_msgs",
+    srcs = glob(["tf2_sensor_msgs/src/tf2_sensor_msgs/*.py"]),
+    visibility = ["//visibility:public"],
+    imports = ["tf2_sensor_msgs/src/tf2_sensor_msgs"],
+    deps = [
+      "@ros2_common_interfaces//:py_geometry_msgs",
+      "@ros2_common_interfaces//:py_sensor_msgs",
+      "@ros2_common_interfaces//:py_std_msgs",
+    ],
+)
+
 ros2_cpp_library(
     name = "tf2_eigen",
     hdrs = ["tf2_eigen/include/tf2_eigen/tf2_eigen.hpp"],
